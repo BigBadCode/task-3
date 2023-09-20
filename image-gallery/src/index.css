@@ -1,13 +1,108 @@
+/* App Container */
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Image Gallery Container */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Flexible grid columns */
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Gallery Item */
+.gallery-item {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  cursor: grab;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Gallery Item Hover Effect */
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Container */
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Search Input */
+input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Clear Button */
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Tags Container */
+.tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Tag */
+.tag {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Image */
+.gallery-item img {
+  max-width: 100%;
+  /* Limit the image width to the container width */
+  max-height: 200px;
+  /* Set a maximum height for the image */
+  object-fit: cover;
+  /* Maintain aspect ratio and cover the container */
 }
